@@ -1,0 +1,30 @@
+.nav {
+    border-width: 1px 0;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg,rgba(184,134,45,0),#b8862d,#ffdf91,#b8862d,rgba(184,134,45,0));
+    border-style: solid;
+    background: -webkit-gradient(linear,left top,right top,from(#181c29),color-stop(40%,#394766),to(#181c29));
+    background: -webkit-linear-gradient(left,#181c29,#394766 40%,#181c29);
+    background: -o-linear-gradient(left,#181c29,#394766 40%,#181c29);
+    background: linear-gradient(90deg,#181c29,#394766 40%,#181c29);
+
+}
+
+.nav a {
+    display: inline-block;
+    font-family: maiola, serif;
+    font-weight: 400;
+    color: #ffdf91;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: 1.2rem;
+    padding: 0.5em 0.75em;
+}
+.nav a:hover {
+    background: -webkit-gradient(linear,left top,right top,from(rgba(3,77,112,0)),color-stop(15%,#034d70),to(rgba(3,77,112,0)));
+    background: -webkit-linear-gradient(left,rgba(3,77,112,0),#034d70 15% 85%,rgba(3,77,112,0));
+    background: -o-linear-gradient(left,rgba(3,77,112,0),#034d70 15% 85%,rgba(3,77,112,0));
+    background: linear-gradient(90deg,rgba(3,77,112,0),#034d70 15% 85%,rgba(3,77,112,0));
+
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+html
+    head
+        title Hello Pug!
+
+        //- Tailwind.css
+        link(rel="stylesheet", href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css")
+
+        //- General.css
+        link(rel="stylesheet", href="styles/general.css")
+
+    body.h-full.bg-gray-400.flex.flex-col
+        include ./header.pug
+        include ./nav.pug
+        #content
+        footer
