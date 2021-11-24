@@ -1,0 +1,20 @@
+html
+    head
+        title AoE Picker
+
+        //- Tailwind.css
+        link(rel="stylesheet", href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css")
+
+        //- general.css
+        link(rel="stylesheet", href="styles/general.css")
+        //- index_main.css
+        link(rel="stylesheet", href="styles/index_main.css")
+
+    body.h-full.flex.flex-col
+        include ./header.pug
+        include ./nav.pug
+        #content
+            #banner
+                h1 FAQ
+            #main
+        include ./footer.pug
