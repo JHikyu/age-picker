@@ -5,13 +5,51 @@ html
         //- Tailwind.css
         link(rel="stylesheet", href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css")
 
-        //- General.css
+        //- general.css
         link(rel="stylesheet", href="styles/general.css")
+        //- index_main.css
+        link(rel="stylesheet", href="styles/index_main.css")
 
-    body.h-full.bg-gray-400.flex.flex-col
+    body.h-full.flex.flex-col
         include ./header.pug
         include ./nav.pug
         #content
             #banner
                 h1 Home
+            #main.p-12.flex.flex-wrap.justify-evenly.gap-4
+                article.w-max
+                    a(href="picker")
+                        div.relative
+                            img(src="https://images.gamewatcherstatic.com/image/file/3/77/114513/Age-of-Empires-4-Civilizations-List-3.jpg", alt="")
+                            div.absolute.bottom-0
+                                p Picker
+                        div.description.py-2.px-4
+                            span Competitive turn based picker for skill based gameplay.
+                article.w-max
+                    a(href="randomizer")
+                        div.relative
+                            img(src="https://cdn.mos.cms.futurecdn.net/EDGaxethVJ8yrtVM6G4PnX-1200-80.jpg", alt="")
+                            div.absolute.bottom-0
+                                p Randomizer
+                        div.description.py-2.px-4
+                            span Randomize everything in games without disadvantages.
+                article.w-max
+                    a(href="trial")
+                        div.relative
+                            img(src="https://images.cgames.de/images/gamestar/290/age-of-empires-4-gameplay_6135120.jpg", alt="")
+                            div.absolute.bottom-0
+                                p Trial
+                        div.description.py-2.px-4
+                            span Try out our challenges and compete with other players.
+                article.w-max
+                    a(href="trial")
+                        div.relative
+                            img(src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/10/analisis-age-empires-iv-2511575.jpg", alt="")
+                            div.absolute.bottom-0
+                                p News
+                        div.description.py-2.px-4
+                            span Updates, server stats and more.
+
+
+            
         footer

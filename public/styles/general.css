@@ -1,3 +1,7 @@
+body {
+    background-color: #181c29;
+}
+
 .nav {
     border-width: 1px 0;
     border-image-slice: 1;
