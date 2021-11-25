@@ -1,4 +1,4 @@
-#mainSwitch {
+#main {
     background-blend-mode: overlay;
     background-size: 256px,100%;
     background-image: url(../img/background-pattern.png),-webkit-gradient(linear,left top,left bottom,from(#394766),to(#181c29));

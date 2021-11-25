@@ -19,12 +19,122 @@ html
         #main.flex.justify-center.h-full
             #mainSwitch.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full
                 div.space-x-4
-                    button.text-2xl Join draft
-                    button.text-2xl Create draft
+                    button#joinDraft.text-2xl Join draft
+                    button#createDraft.text-2xl Create draft
                 div
-                    p.text-white.text-center There are currently 2.348 players drafting.
+                    p.text-white.text-center
+                        | There are currently 
+                        span#draftCount.text-white.text-2xl
+                            | 0
+                        |  players drafting.
                     p.text-gray-600.font-bold.text-center.text-sm 2.683.567 Completed
-                    
+            #joinRoom.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full.hidden
+                div
+                    input#joinRoomCode(pattern="[0-9](6)" required placeholder="123456" max="999999" type="number").text-2xl
+                    button#joinRoomButton.text-2xl Join
+
+                button#joinRoomCancel Back
+
+                p.text-white.text-center
+                    | Input the code of the room to join it.
+            #createRoom.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full.hidden
+                div
+                    input(type="text" placeholder="Room name")#createRoomName.text-2xl
+                    button#createGame.text-2xl Create
+
+                div
+                    p.text-white.text-xl.mb-4.text-center Allowed Civilizations
+                    div.flex.justify-center.flex-wrap.space-x-4#createCivilizations
+                        img(src="src/flag_rus.png" onclick="createSwitchAllowed(this)" name="0").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_holyromanempire.png" onclick="createSwitchAllowed(this)" name="1").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_chinese.png" onclick="createSwitchAllowed(this)" name="2").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_english.png" onclick="createSwitchAllowed(this)" name="3").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_delhisultanate.png" onclick="createSwitchAllowed(this)" name="4").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_mongols.png" onclick="createSwitchAllowed(this)" name="5").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_abbasiddynasty.png" onclick="createSwitchAllowed(this)" name="6").flag.border-b-4.cursor-pointer
+                        img(src="src/flag_french.png" onclick="createSwitchAllowed(this)" name="7").flag.border-b-4.cursor-pointer
+
+                div
+                    p.text-white.text-xl.mb-4.text-center Draft order
+                    div.flex.space-x-2.text-white.font-medium#createDraftOrder
+                        div.px-2.py-1.rounded-xl.bg-red-500
+                            span BAN
+                        div.px-2.py-1.rounded-xl.bg-green-500
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-green-500
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-green-500
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-purple-500
+                            span SNIPE
+                        div.px-2.py-1.rounded-xl.bg-blue-500
+                            span PICK
+            #draftingRoom.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full.hidden
+                div
+                    p.text-white.text-xl.text-center
+                        | Drafting room - 
+                        span#draftingRoomName.text-white.text-2xl
+                    p.text-white.text-center Id: 
+                        span#draftingRoomCode.text-white.text-xl 
+
+                button#createRoomCancel Leave
+
+                p.text-white.text-center
+                    | Waiting for another player.
+            #draftingRoomStarted.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full.hidden
+                div
+                    h2.text-3xl.mb-4.text-center
+                        span#startedType BAN
+                        |  - 
+                        span#startedTimeLeft 20
+                    div.flex.space-x-2.text-white.font-medium.justify-center#startedDraftOrder
+                        div.px-2.py-1.rounded-xl.bg-red-500
+                            span BAN
+                        div.px-2.py-1.rounded-xl.bg-green-500.opacity-20
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-green-500.opacity-20
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-green-500.opacity-20
+                            span ADD
+                        div.px-2.py-1.rounded-xl.bg-purple-500.opacity-20
+                            span SNIPE
+                        div.px-2.py-1.rounded-xl.bg-blue-500.opacity-20
+                            span PICK
+       
+                div.flex.flex-col
+                    div.flex.space-x-12.mb-8
+                        div.flex.flex-col.flex-1.justify-center.items-center
+                            h2 You
+                            div.flex.space-x-4.text-white
+                                div.flex.flex-col.text-center
+                                    p Picks
+                                    div#startedYouPicks.flex
+                                div.flex.flex-col.text-center
+                                    p Bans
+                                    div#startedYouBans.flex
+
+
+                        div.flex.flex-col.flex-1.justify-center.items-center
+                            h2 Opponent
+                            div.flex.space-x-4.text-white
+                                div.flex.flex-col.text-center
+                                    p Picks
+                                    div#startedOpponentPicks.flex
+                                div.flex.flex-col.text-center
+                                    p Bans
+                                    div#startedOpponentBans.flex
+
+                    div.flex.flex-wrap.px-4.gap-2
+                        img(src="src/flag_rus.png", alt="" name="0" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_holyromanempire.png", alt="" name="1" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_chinese.png", alt="" name="2" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_english.png", alt="" name="3" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_delhisultanate.png", alt="" name="4" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_mongols.png", alt="" name="5" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_abbasiddynasty.png", alt="" name="6" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+                        img(src="src/flag_french.png", alt="" name="7" onclick="startedClick(this.name)").flex-grow.cursor-pointer
+
+                button#createRoomCancel Leave
 
 
         script(src="src/socketio.js")
