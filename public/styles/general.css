@@ -98,3 +98,29 @@ body {
 90deg,rgba(3,77,112,0),rgba(3,77,112,.85) 10%,#001d34 35% 65%,rgba(3,77,112,.85) 90%,rgba(3,77,112,0));
     z-index: -1;
 }
+
+button {
+    line-height: 1.5rem;
+    padding: 0.375rem 1.125rem;
+    font-size: 1rem;
+    font-family: maiola,serif;
+    font-weight: 700;
+    color: #45281f;
+    border-color: #ffdf91;
+    -webkit-box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 60%);
+    box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 60%);
+    text-shadow: 1px 1px 2px rgb(255 223 145 / 80%);
+    background-image: url(../img/button-bg.svg);
+    background-position: 20%;
+}
+
+footer {
+    width: 100vw;
+    padding: 1em;
+
+    border-width: 2px 0;
+    border-image-slice: 2;
+    border-image-source: linear-gradient(
+90deg,rgba(184,134,45,0),#b8862d,#ffdf91,#b8862d,rgba(184,134,45,0));
+    border-style: solid;
+}

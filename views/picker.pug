@@ -8,13 +8,26 @@ html
         //- general.css
         link(rel="stylesheet", href="styles/general.css")
         //- index_main.css
-        link(rel="stylesheet", href="styles/index_main.css")
+        link(rel="stylesheet", href="styles/picker_main.css")
 
     body.h-full.flex.flex-col
         include ./header.pug
         include ./nav.pug
-        #content
+        #content.flex-1
             #banner
                 h1 Picker
-            #main
+        #main.flex.justify-center.h-full
+            #mainSwitch.flex.justify-center.items-center.flex-col.space-y-8.h-min.w-full
+                div.space-x-4
+                    button.text-2xl Join draft
+                    button.text-2xl Create draft
+                div
+                    p.text-white.text-center There are currently 2.348 players drafting.
+                    p.text-gray-600.font-bold.text-center.text-sm 2.683.567 Completed
+                    
+
+
+        script(src="src/socketio.js")
+        script(src="src/picker_socket.js") 
+
         include ./footer.pug

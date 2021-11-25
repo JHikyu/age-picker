@@ -1,0 +1,12 @@
+#mainSwitch {
+    background-blend-mode: overlay;
+    background-size: 256px,100%;
+    background-image: url(../img/background-pattern.png),-webkit-gradient(linear,left top,left bottom,from(#394766),to(#181c29));
+    background-image: url(../img/background-pattern.png),-webkit-linear-gradient(#394766,#181c29);
+    background-image: url(../img/background-pattern.png),-o-linear-gradient(#394766,#181c29);
+    background-image: url(../img/background-pattern.png),linear-gradient(#394766,#181c29);
+    padding: 1.125rem;
+    text-shadow: 1px 1px 0 rgb(0 0 0 / 60%);
+    -webkit-box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 60%);
+    box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 60%);
+}
